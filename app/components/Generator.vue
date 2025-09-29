@@ -32,6 +32,7 @@ const handleUUIDCopy = async (version: number) => {
             icon: "i-lucide-check",
             title: "Copied!",
             description: "UUID successfully copied.",
+            color: "success",
             duration: 2000
         });
     });

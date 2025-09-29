@@ -65,7 +65,7 @@ const handleImageConverter = async () => {
         </div>
         <UFileUpload label="Drop Image Here" description="PNG, JPEG or WEBP" layout="list" position="outside"
             v-model="file" />
-        <USelect :items="formats" v-model="format" value-key="id" variant="soft" class="w-full" :disabled="!file" />
+        <USelect :items="formats" v-model="format" value-key="id" variant="soft" :disabled="!file" class="w-full" />
         <UButton icon="i-lucide-sparkles" :label="isProcessing ? 'Processing...' : 'Convert Image'"
             :color="isProcessing ? 'neutral' : 'primary'" variant="soft" size="lg" block :disabled="!file"
             :loading="isProcessing" @click="handleImageConverter" />

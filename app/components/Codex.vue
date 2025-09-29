@@ -14,6 +14,7 @@ const encodeBase64 = () => {
         icon: "i-lucide-check",
         title: "Encoded!",
         description: "Successfully encoded.",
+        color: "success",
         duration: 2000
     });
 }
@@ -26,6 +27,7 @@ const decodeBase64 = () => {
             icon: "i-lucide-check",
             title: "Decoded!",
             description: "Successfully decoded.",
+            color: "success",
             duration: 2000
         });
     } catch (e) {
@@ -34,6 +36,7 @@ const decodeBase64 = () => {
             icon: "i-lucide-x",
             title: "Error!",
             description: "Invalid Base64.",
+            color: "error",
             duration: 2000
         });
     }
@@ -45,6 +48,7 @@ const handleCopy = async () => {
             icon: "i-lucide-check",
             title: "Copied!",
             description: "Successfully copied.",
+            color: "success",
             duration: 2000
         });
     });
