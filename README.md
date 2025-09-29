@@ -8,8 +8,9 @@ A collection of useful tools in one place.
 
 ### 🔧 Tools
 
-- UUID Generator  
-- Image Format Converter  
+- UUID Generator
+- Image Format Converter
+- Base64 Encoder/Decoder
 
 ### 🚀 Quick Start
 
