@@ -11,6 +11,10 @@ const tools = [
     {
         label: "Image Converter",
         slot: "converter" as const
+    },
+    {
+        label: "Encode / Decode",
+        slot: "codex" as const
     }
 ] satisfies TabsItem[];
 </script>
@@ -28,6 +32,9 @@ const tools = [
                 </template>
                 <template #converter>
                     <Converter />
+                </template>
+                <template #codex>
+                    <Codex />
                 </template>
             </UTabs>
         </div>
