@@ -21,8 +21,8 @@ const tools = [
 
 <template>
     <div class="space-y-8 p-4">
-        <div class="flex flex-col justify-center items-center gap-4">
-            <UIcon name="i-lucide-wind" class="w-16 h-16" />
+        <div class="flex flex-col justify-center items-center gap-4 py-8">
+            <img src="/favicon.ico" alt="tools">
             <p class="text-base text-center font-medium uppercase">{{ statements.join(" • ") }}</p>
         </div>
         <div class="flex flex-col justify-center items-center w-full mx-auto md:w-3/4">
