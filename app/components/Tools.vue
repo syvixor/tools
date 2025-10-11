@@ -1,42 +1,50 @@
 <script lang="ts" setup>
-import type { TabsItem } from "@nuxt/ui";
-
-const statements = ["Privacy-First", "No Tracking", "Local Processing Only"];
-
 const tools = [
     {
-        label: "UUID Generator",
-        slot: "generator" as const
+        to: "/uuid-generator",
+        icon: "i-lucide-sparkles",
+        title: "UUID Generator",
+        description: "Generate unique UUIDs instantly."
     },
     {
-        label: "Image Converter",
-        slot: "converter" as const
+        to: "/image-converter",
+        icon: "i-lucide-image",
+        title: "Image Converter",
+        description: "Convert images between formats quickly and easily.",
+        development: false
     },
     {
-        label: "Encode / Decode",
-        slot: "codex" as const
+        to: "/encoder-decoder",
+        icon: "i-lucide-code",
+        title: "Encoder/Decoder",
+        description: "Encode & Decode text using Base64.",
+        development: false
+    },
+    {
+        to: undefined,
+        icon: "i-lucide-qr-code",
+        title: "QR Code Generator",
+        description: "Generate QR codes for links, text, or any data.",
+        development: true
     }
-] satisfies TabsItem[];
+];
 </script>
 
 <template>
-    <div class="space-y-8 p-4">
-        <div class="flex flex-col justify-center items-center gap-4 py-8">
-            <img src="/favicon.ico" alt="tools">
-            <p class="text-base text-center font-medium uppercase">{{ statements.join(" • ") }}</p>
-        </div>
-        <div class="flex flex-col justify-center items-center w-full mx-auto md:w-3/4">
-            <UTabs :items="tools" variant="link" :ui="{ trigger: 'grow' }" class="w-full">
-                <template #generator>
-                    <Generator />
-                </template>
-                <template #converter>
-                    <Converter />
-                </template>
-                <template #codex>
-                    <Codex />
-                </template>
-            </UTabs>
-        </div>
-    </div>
+    <UPageGrid class="gap-4 p-4">
+        <UPageCard :to="tool.to" :icon="tool.icon" :title="tool.title" spotlight v-for="(tool, index) in tools"
+            :key="index" variant="subtle" :ui="{
+                container: 'gap-y-2',
+                wrapper: 'items-start',
+                leading: 'bg-primary/10 ring ring-inset ring-primary/25 rounded-full p-2.5',
+                title: 'text-lg font-semibold uppercase'
+            }" class="rounded-lg">
+            <div class="flex flex-col gap-2">
+                <p class="text-base font-normal text-muted">{{ tool.description }}</p>
+                <UButton :trailing-icon="`${tool.development ? 'i-lucide-construction' : 'i-lucide-arrow-right'}`"
+                    :label="`${tool.development ? 'Under Development' : 'Open Tool'}`" variant="soft" block
+                    :disabled="tool.development" />
+            </div>
+        </UPageCard>
+    </UPageGrid>
 </template>

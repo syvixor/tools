@@ -1,6 +1,21 @@
 <script lang="ts" setup>
 import { Base64 } from "js-base64";
 
+useSeoMeta({
+    title: "Developer Tools - Encoder / Decoder",
+    description: "Encode & Decode text using Base64.",
+    ogTitle: "Developer Tools - Encoder / Decoder",
+    ogDescription: "Encode & Decode text using Base64.",
+    ogImage: "/og.png",
+    twitterCard: "summary_large_image",
+    twitterTitle: "Developer Tools - Encoder / Decoder",
+    twitterDescription: "Encode & Decode text using Base64.",
+    twitterImage: "/og.png",
+    twitterCreator: "@syvixor",
+    robots: "index, follow",
+    author: "Syvixor"
+});
+
 const toast = useToast();
 const { copy, copied } = useClipboard();
 
@@ -56,7 +71,10 @@ const handleCopy = async () => {
 </script>
 
 <template>
-    <div class="space-y-4 mt-4">
+    <div class="flex flex-col justify-center md:w-4/5 gap-4 mx-auto p-4">
+        <div class="block">
+            <Back />
+        </div>
         <div class="flex flex-col">
             <h2 class="text-xl font-bold">Encode / Decode</h2>
             <p class="text-base font-normal">Encode & Decode text using Base64.</p>
@@ -79,5 +97,14 @@ const handleCopy = async () => {
                     :disabled="value.length < 1" @click="decodeBase64" />
             </div>
         </div>
+        <UPageCard title="About Base64 Encoding" variant="subtle" spotlight>
+            <template #description>
+                Base64 is a binary-to-text encoding scheme used to safely encode data for transmission 
+                or storage. It's commonly used in web development to embed images, files, or data inside 
+                HTML, CSS, or URLs. This tool lets you easily encode or decode Base64 strings directly in 
+                your browser, without sending your data to a server.
+            </template>
+        </UPageCard>
+
     </div>
 </template>

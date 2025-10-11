@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-* {
-    font-family: var(--font-mono);
+@theme {
+    --font-sans: "Outfit", sans-serif;
 }

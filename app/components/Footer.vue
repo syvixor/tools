@@ -3,7 +3,11 @@ const currentYear = new Date().getFullYear();
 </script>
 
 <template>
-    <div class="flex justify-center items-center p-4">
-        <p class="text-base font-normal">&copy;{{ currentYear }}. Tools</p>
-    </div>
+    <UFooter>
+        <template #left>
+            <p class="text-sm font-normal text-muted">
+                Copyright © {{ currentYear }}
+            </p>
+        </template>
+    </UFooter>
 </template>

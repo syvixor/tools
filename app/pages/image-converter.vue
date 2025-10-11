@@ -1,6 +1,21 @@
 <script lang="ts" setup>
 import type { SelectItem } from "@nuxt/ui";
 
+useSeoMeta({
+    title: "Developer Tools - Image Converter",
+    description: "Convert images between formats quickly and easily.",
+    ogTitle: "Developer Tools - Image Converter",
+    ogDescription: "Convert images between formats quickly and easily.",
+    ogImage: "/og.png",
+    twitterCard: "summary_large_image",
+    twitterTitle: "Developer Tools - Image Converter",
+    twitterDescription: "Convert images between formats quickly and easily.",
+    twitterImage: "/og.png",
+    twitterCreator: "@syvixor",
+    robots: "index, follow",
+    author: "Syvixor"
+});
+
 const file = ref<File>();
 
 const format = ref("image/jpeg");
@@ -58,7 +73,10 @@ const handleImageConverter = async () => {
 </script>
 
 <template>
-    <div class="space-y-4 mt-4">
+    <div class="flex flex-col justify-center md:w-4/5 gap-4 mx-auto p-4">
+        <div class="block">
+            <Back />
+        </div>
         <div class="flex flex-col">
             <h2 class="text-xl font-bold">Image Converter</h2>
             <p class="text-base font-normal">Convert images between formats quickly and easily.</p>
@@ -69,5 +87,13 @@ const handleImageConverter = async () => {
         <UButton icon="i-lucide-sparkles" :label="isProcessing ? 'Processing...' : 'Convert Image'"
             :color="isProcessing ? 'neutral' : 'primary'" variant="soft" size="lg" block :disabled="!file"
             :loading="isProcessing" @click="handleImageConverter" />
+        <UPageCard title="About Image Conversion" variant="subtle" spotlight>
+            <template #description>
+                This tool allows you to convert images between common formats like JPEG, PNG, and WEBP 
+                directly in your browser. It works by rendering the selected image on an HTML5 canvas and 
+                exporting it in the chosen format—no server upload required, ensuring your images stay 
+                private and secure.
+            </template>
+        </UPageCard>
     </div>
 </template>

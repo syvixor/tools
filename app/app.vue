@@ -1,25 +1,11 @@
 <script lang="ts" setup>
 useHead({ htmlAttrs: { lang: "en" } });
-
-const isReady = ref(false);
-onMounted(() => (isReady.value = true));
 </script>
 
 <template>
-    <Head>
-        <Title>Tools</Title>
-    </Head>
     <UApp>
-        <div class="flex flex-col min-h-screen" v-show="isReady">
-            <div class="flex-grow">
-                <Theme />
-                <Github />
-                <Tools />
-            </div>
-            <Footer />
-        </div>
-        <div v-show="!isReady" class="flex justify-center items-center h-screen">
-            <UButton label="Loading" color="neutral" variant="link" size="xl" loading />
-        </div>
+        <NuxtLayout>
+            <NuxtPage />
+        </NuxtLayout>
     </UApp>
 </template>
