@@ -99,6 +99,5 @@ const handleCopy = async () => {
                 your browser, without sending your data to a server.
             </template>
         </UPageCard>
-
     </div>
 </template>

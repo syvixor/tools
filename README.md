@@ -11,6 +11,7 @@ A collection of useful tools in one place.
 - UUID Generator
 - Image Format Converter
 - Base64 Encoder/Decoder
+- QR Code Generator
 
 ### 🚀 Quick Start
 

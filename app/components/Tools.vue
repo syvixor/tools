@@ -21,11 +21,11 @@ const tools = [
         development: false
     },
     {
-        to: undefined,
+        to: "/qr-code-generator",
         icon: "i-lucide-qr-code",
         title: "QR Code Generator",
         description: "Generate QR codes for links, text, or any data.",
-        development: true
+        development: false
     }
 ];
 </script>
