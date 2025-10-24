@@ -6,14 +6,8 @@ useSeoMeta({
     description: "Encode & Decode text using Base64.",
     ogTitle: "Developer Tools - Encoder / Decoder",
     ogDescription: "Encode & Decode text using Base64.",
-    ogImage: "/og.png",
-    twitterCard: "summary_large_image",
     twitterTitle: "Developer Tools - Encoder / Decoder",
     twitterDescription: "Encode & Decode text using Base64.",
-    twitterImage: "/og.png",
-    twitterCreator: "@syvixor",
-    robots: "index, follow",
-    author: "Syvixor"
 });
 
 const toast = useToast();
@@ -71,7 +65,7 @@ const handleCopy = async () => {
 </script>
 
 <template>
-    <div class="flex flex-col justify-center md:w-4/5 gap-4 mx-auto p-4">
+    <div class="flex flex-col justify-center gap-4 p-4 md:p-8">
         <div class="block">
             <Back />
         </div>

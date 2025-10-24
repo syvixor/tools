@@ -7,14 +7,8 @@ useSeoMeta({
     description: "Generate unique UUIDs instantly.",
     ogTitle: "Developer Tools - UUID Generator",
     ogDescription: "Generate unique UUIDs instantly.",
-    ogImage: "/og.png",
-    twitterCard: "summary_large_image",
     twitterTitle: "Developer Tools - UUID Generator",
-    twitterDescription: "Generate unique UUIDs instantly.",
-    twitterImage: "/og.png",
-    twitterCreator: "@syvixor",
-    robots: "index, follow",
-    author: "Syvixor"
+    twitterDescription: "Generate unique UUIDs instantly."
 });
 
 const toast = useToast();
@@ -55,7 +49,7 @@ const handleUUIDCopy = async (version: number) => {
 </script>
 
 <template>
-    <div class="flex flex-col justify-center md:w-4/5 gap-4 mx-auto p-4">
+    <div class="flex flex-col justify-center gap-4 p-4 md:p-8">
         <div class="block">
             <Back />
         </div>
@@ -99,9 +93,9 @@ const handleUUIDCopy = async (version: number) => {
         </UTabs>
         <UPageCard title="About UUID 4" variant="subtle" spotlight>
             <template #description>
-                UUID version 4 (v4) generates universally unique identifiers using random numbers. 
-                With 122 bits of randomness, the probability of generating duplicate values is 
-                astronomically low, making it ideal for most general-purpose unique ID needs, especially 
+                UUID version 4 (v4) generates universally unique identifiers using random numbers.
+                With 122 bits of randomness, the probability of generating duplicate values is
+                astronomically low, making it ideal for most general-purpose unique ID needs, especially
                 in distributed systems.
             </template>
         </UPageCard>

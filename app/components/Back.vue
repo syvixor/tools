@@ -2,5 +2,5 @@
 </script>
 
 <template>
-    <UButton to="/" icon="i-lucide-arrow-left" label="Back Home" color="neutral" variant="ghost" />
+    <UButton to="/" icon="i-lucide-arrow-left" label="Go Back" variant="soft" />
 </template>

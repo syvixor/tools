@@ -6,14 +6,8 @@ useSeoMeta({
     description: "Convert images between formats quickly and easily.",
     ogTitle: "Developer Tools - Image Converter",
     ogDescription: "Convert images between formats quickly and easily.",
-    ogImage: "/og.png",
-    twitterCard: "summary_large_image",
     twitterTitle: "Developer Tools - Image Converter",
     twitterDescription: "Convert images between formats quickly and easily.",
-    twitterImage: "/og.png",
-    twitterCreator: "@syvixor",
-    robots: "index, follow",
-    author: "Syvixor"
 });
 
 const file = ref<File>();
@@ -73,7 +67,7 @@ const handleImageConverter = async () => {
 </script>
 
 <template>
-    <div class="flex flex-col justify-center md:w-4/5 gap-4 mx-auto p-4">
+    <div class="flex flex-col justify-center gap-4 p-4 md:p-8">
         <div class="block">
             <Back />
         </div>

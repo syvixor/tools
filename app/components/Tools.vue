@@ -31,20 +31,26 @@ const tools = [
 </script>
 
 <template>
-    <UPageGrid class="gap-4 p-4">
-        <UPageCard :to="tool.to" :icon="tool.icon" :title="tool.title" spotlight v-for="(tool, index) in tools"
-            :key="index" variant="subtle" :ui="{
-                container: 'gap-y-2',
-                wrapper: 'items-start',
-                leading: 'bg-primary/10 ring ring-inset ring-primary/25 rounded-full p-2.5',
-                title: 'text-lg font-semibold uppercase'
-            }" class="rounded-lg">
-            <div class="flex flex-col gap-2">
-                <p class="text-base font-normal text-muted">{{ tool.description }}</p>
-                <UButton :trailing-icon="`${tool.development ? 'i-lucide-construction' : 'i-lucide-arrow-right'}`"
-                    :label="`${tool.development ? 'Under Development' : 'Open Tool'}`" variant="soft" block
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+        <div spotlight v-for="(tool, index) in tools" :key="index"
+            class="bg-elevated/75 ring ring-accented/75 rounded-lg p-4">
+            <div class="flex flex-col h-full gap-4">
+                <div class="flex bg-primary/15 ring-2 ring-primary/50 w-fit rounded-full p-2">
+                    <UIcon :name="tool.icon" class="bg-primary w-5 h-5" />
+                </div>
+                <!-- <CHANGE> added flex-1 to make content grow and push button down -->
+                <div class="flex flex-col gap-4 flex-1">
+                    <div class="flex flex-col">
+                        <h2 class="text-xl font-bold">{{ tool.title }}</h2>
+                        <p class="text-base font-normal text-muted">{{ tool.description }}</p>
+                    </div>
+                </div>
+                <UButton :to="tool.to"
+                    :trailing-icon="`${tool.development ? 'i-lucide-construction' : 'i-lucide-arrow-right'}`"
+                    :label="`${tool.development ? 'Under Development' : 'Open Tool'}`"
+                    :color="`${tool.development ? 'error' : 'primary'}`" variant="soft" block
                     :disabled="tool.development" />
             </div>
-        </UPageCard>
-    </UPageGrid>
+        </div>
+    </div>
 </template>
