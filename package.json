@@ -16,7 +16,7 @@
         "uuid": "^13.0.0"
     },
     "devDependencies": {
-        "@iconify-json/lucide": "^1.2.71",
+        "@iconify-json/lucide": "^1.2.72",
         "@nuxt/ui": "^4.1.0",
         "@vueuse/core": "^14.0.0",
         "@vueuse/nuxt": "^14.0.0"
